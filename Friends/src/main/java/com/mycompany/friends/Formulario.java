@@ -315,19 +315,17 @@ public class Formulario extends javax.swing.JFrame {
                 name = lineSplit[0];
                 number = Long.parseLong(lineSplit[1]);
                 
-                if (!name.equals(newName)){
-                    continue;
-                } else if (name.equals(newName)){
+                if (name.equals(newName)){
                     JOptionPane.showMessageDialog(null,"The contact name is " + name + 
                             "\nThe contact number is " + number);
                     found = true;
                     break;
-                }else{
-                    JOptionPane.showMessageDialog(null,"There is not exist a record with the name " + newName);
-                    break;
                 }
                 
             }
+            if (found != true){
+                    JOptionPane.showMessageDialog(null,"There is not exist a record with the name " + newName);
+                }
         }
 
         catch (IOException ioe){
